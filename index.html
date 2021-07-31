@@ -1,0 +1,198 @@
+<html>
+
+  <style>
+    .flex-container {
+      display: flex;
+      margin: 2px;
+    }
+    
+    .flex-container > div {
+      margin: 2px;
+    }
+    .calc{
+      background-color: gray;
+      width:340px;
+      height:395px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }
+    .input{
+      margin: 5px;
+      width: 328px;
+      height: 50px;
+      font-size: x-large;
+      text-align: right;
+      padding-right: 10px;
+      padding-left: 10px;
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .button{
+      background-color: #008080; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 15px;
+      margin: 2px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      height: 60px;
+      width: 80px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: black;
+      font-size: large;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .button0{
+      background-color: #008080;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      margin: 2px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      height: 60px;
+      width: 164px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: black;
+      font-size: large;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .buttonclear{
+      background-color: red; 
+      border: none;
+      color: white;
+      padding: 15px 15px;
+      margin: 2px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      height: 60px;
+      width: 164px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: black;
+      font-size: large;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .button2{
+      background-color: orange; 
+      border: none;
+      color: white;
+      padding: 15px 15px;
+      margin: 2px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      height: 60px;
+      width: 80px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: black;
+      font-size: large;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .button3{
+      background-color:#6495ED; 
+      border: none;
+      color: white;
+      padding: 15px 15px;
+      margin: 2px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      height: 60px;
+      width: 80px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: black;
+      font-size: large;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .button4{
+      background-color:#3CB371; 
+      border: none;
+      color: white;
+      padding: 15px 15px;
+      margin: 2px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      height: 60px;
+      width: 80px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: black;
+      font-size: large;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+  </style>
+
+  <head>
+    
+    <title>Test Page</title>
+    
+    <meta charset="UTF-8"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+
+  <body>
+    <div class="calc">
+      
+      <div class = "flex-container">
+        <input id = "numScreen" class = "input" width = "100px" value = "0" disabled><br>
+      </div>
+
+      <div id="main">
+
+        <div class="flex-container">
+          <button id ="clearScreen" class = "buttonclear" type="button">AC</button>
+          <button id ="changeSign" class = "button2" type="button" onclick="changeSign();">+/-</button>
+          <button id ="div" class = "button3" type="button" onclick="divide()">/</button>
+        </div>
+        
+        <div class="flex-container">
+          <button id ="seven" class = "button" type="button" onclick="putNumber(this);">7</button>
+          <button id ="eight" class = "button" type="button" onclick="putNumber(this);">8</button>
+          <button id ="nine" class = "button" type="button" onclick="putNumber(this);">9</button>
+          <button id ="multiply" class = "button3" type="button" onclick="multiply()">*</button>
+        </div>
+
+        <div class="flex-container">
+          <button id ="four" class = "button" type="button" onclick="putNumber(this);">4</button>
+          <button id ="five" class = "button" type="button" onclick="putNumber(this);">5</button>
+          <button id ="six" class = "button" type="button" onclick="putNumber(this);">6</button>
+          <button id ="subtract" class = "button3" type="button" onclick="subtract()">-</button>
+        </div>
+
+        <div class="flex-container">
+          <button id ="one" class = "button" type="button" onclick="putNumber(this);">1</button>
+          <button id ="two" class = "button" type="button" onclick="putNumber(this);">2</button>
+          <button id ="three" class = "button" type="button" onclick="putNumber(this);">3</button>
+          <button id ="add" class = "button3" type="button" onclick="add()">+</button>
+        </div>
+
+        <div class="flex-container">
+          <button id ="one" class = "button0" type="button" onclick="putNumber(this);">0</button>
+          <button id ="decimal" class = "button" type="button" onclick="addDecimal()">.</button>
+          <button id ="equal" class = "button4" type="button" onclick="equal()">=</button>
+        </div>
+        
+      </div>
+
+      <script src="js/index.js">
+      </script>
+    </div>
+  </body>
+
+</html>
